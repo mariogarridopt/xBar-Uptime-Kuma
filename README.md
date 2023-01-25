@@ -25,7 +25,7 @@ PASSWORD = 'admin' # uptime kuma password
 Since [Uptime Kuma](https://github.com/louislam/uptime-kuma) does not have a formal API([#8](https://github.com/mariogarridopt/xBar-Uptime-Kuma/issues/8)), I had to use [uptime-kuma-api](https://github.com/lucasheld/uptime-kuma-api).
 This is not great because for this to work now you have to install dependencies first:
 ```bash
-pip install uptime-kuma-API
+pip install uptime-kuma-api
 ```
 We might remove this dependence when Uptime Kuma publishes an official API.
 
