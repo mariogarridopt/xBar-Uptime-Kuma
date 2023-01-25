@@ -39,4 +39,4 @@ If you find any bug please report it at [issues](https://github.com/mariogarrido
 
 ### License
 
-This project is available under the GPL-3.0 license.
+This project is available under the [GPL-3.0 license](LICENSE).
