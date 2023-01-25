@@ -1,6 +1,6 @@
 xBar-Uptime-Kuma
 [![GitHub issues](https://img.shields.io/github/issues/mariogarridopt/xBar-Uptime-Kuma)](https://github.com/mariogarridopt/xBar-Uptime-Kuma/issues)
-[![GitHub labels](https://img.shields.io/github/labels/mariogarridopt/xBar-Uptime-Kuma/help%20wanted)](https://github.com/mariogarridopt/xBar-Uptime-Kuma/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22)
+[![Install xBar](https://img.shields.io/badge/xBar-INSTALL-brightgreen)](xbar://raw.githubusercontent.com/mariogarridopt/xBar-Uptime-Kuma/master/uptimekuma.30s.py)
 ===
 
 This is a [xBar Plugin](https://github.com/matryer/xbar) & [Uptime Kuma addon](https://github.com/louislam/uptime-kuma) that allows you to display your monitored status on the Macbook taskbar.
