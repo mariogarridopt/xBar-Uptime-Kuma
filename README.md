@@ -10,7 +10,7 @@ This is a [xBar Plugin](https://github.com/matryer/xbar) & [Uptime Kuma addon](h
 1. Copy the `uptimekuma.30s.py` file into your xBar scripts folder;
 2. Make sure the file has execution permissions `chmod +x uptimekuma.30s.py`;
 3. Install python dependencies `pip install uptime-kuma-api`
-4. Open `.py` file and change the following fields:
+4. Open `uptimekuma.30s.py` file and change the following fields:
 ```python
 # -------------------------------------------
 BASE_URL = 'http://localhost:3001' # uptime kuma URL no trailing slash
