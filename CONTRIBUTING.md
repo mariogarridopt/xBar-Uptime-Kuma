@@ -1,49 +1,48 @@
-# Contributing to xBar-Uptime-Kuma
+# Contributing
 
-We welcome contributions to xBar-Uptime-Kuma. If you're looking to contribute, here are some things to keep in mind:
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-## Code of Conduct
-
-We have a Code of Conduct that all contributors are expected to follow. Please make sure to read it before making any contributions.
-
-**Examples of behavior that contributes to creating a positive environment include:**
-
-+ Using welcoming and inclusive language
-+ Being respectful of differing viewpoints and experiences
-+ Gracefully accepting constructive criticism
-+ Focusing on what is best for the community
-+ Showing empathy towards other community members
-
-**Examples of unacceptable behavior by participants include:**
-
-+ The use of sexualized language or imagery and unwelcome sexual attention or advances
-+ Trolling, insulting/derogatory comments, and personal or political attacks
-+ Public or private harassment
-+ Publishing others' private information, such as a physical or electronic address, without explicit permission
-+ Other conduct which could reasonably be considered inappropriate in a professional setting
+- Before jumping into a PR be sure to search [existing PRs](https://github.com/mariogarridopt/xBar-Uptime-Kuma/pulls) or [issues](https://github.com/mariogarridopt/xBar-Uptime-Kuma/issues) for an open or closed item that relates to your submission.
 
 ## Issues
 
-Before submitting a bug report or feature request, please check to see if an issue for that has already been filed. If there is, please add any additional information you have to the existing issue.
+Scan through our existing issues to find one that interests you. You can narrow down the search using labels as filters. As a general rule, we don’t assign issues to anyone. If you find an issue to work on, you are welcome to open a PR with a fix.
 
 If there isn't an issue for what you want to report, please open a new issue with as much detail as possible about the problem. This includes:
 
-- A clear and descriptive title
-- A description of the problem, including any error messages
-- Steps to reproduce the problem
-- The expected behavior
-- Screenshots or other relevant information
++ A clear and descriptive title
++ A description of the problem, including any error messages
++ Steps to reproduce the problem
++ The expected behavior
++ Screenshots or other relevant information
 
-## Pull Requests
+## Developing
 
-We love pull requests! If you're submitting a pull request, please keep the following in mind:
+The development branch is `master`. This is the branch that all pull
+requests should be made against. The changes on the `master`
+branch are tagged into a release monthly.
 
-- Make sure your code adheres to our Code of Conduct and coding standards
-- Test your changes before submitting
-- Follow the same format as the existing code in the repository
-- Include a brief description of what your changes do
-- If your changes fix an issue, please include the issue number in the pull request description
-- Make sure your changes don't break the existing code
+To develop locally:
+
+1. [Fork](https://help.github.com/articles/fork-a-repo/) this repository to your
+   own GitHub account and then
+   [clone](https://help.github.com/articles/cloning-a-repository/) it to your local device.
+2. Create a new branch:
+
+   ```sh
+   git checkout -b MY_BRANCH_NAME
+   ```
+
+3. Make your changes.
+
+Please be sure that you can make a full production build before pushing code.
+
+## Making a Pull Request
+
++ Be sure to [check the "Allow edits from maintainers" option](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/allowing-changes-to-a-pull-request-branch-created-from-a-fork) while creating you PR.
++ If your PR refers to or fixes an issue, be sure to add `refs #XXX` or `fixes #XXX` to the PR description. Replacing `XXX` with the respective issue number. Se more about [Linking a pull request to an issue
+  ](https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue).
++ Test your changes before submitting
 
 <br>
 <h2 align="center">Thank you for your contributions!</h2>
