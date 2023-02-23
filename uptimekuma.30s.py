@@ -35,7 +35,7 @@ try:
         beats = api.get_monitor_beats(monitor['id'], 24)
         text = monitor['name'] + " | href='" + BASE_URL + "/dashboard/" + str(monitor['id']) + "'"
         
-        if(beats[-1]['status'] == True):
+        if(len(beats) > 0 and beats[-1]['status'] == True):
             monitor_online = monitor_online + 1
             text = "🟢 " + text
         else:
