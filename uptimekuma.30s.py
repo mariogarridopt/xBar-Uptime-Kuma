@@ -21,6 +21,8 @@ PASSWORD = 'admin'
 
 # -------------------------------------------
 
+api = None
+
 try:
     api = UptimeKumaApi(BASE_URL)
     api.login(USERNAME, PASSWORD)
@@ -60,4 +62,5 @@ except:
     print("No monitor! | color='red'")
     print("Click here to configure | href='file://%s'" % os.path.abspath('uptimekuma.30s.py'))
 finally:
-    api.disconnect()
+    if api is not None:
+        api.disconnect()
