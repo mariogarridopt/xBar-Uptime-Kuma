@@ -30,17 +30,66 @@ try:
     monitor_online = 0;
     monitor_list_string = [];
 
-    ## GET DATA
+    ## GET DATA AND USE REAL UPTIME KUMA GROUPS
+    # Separate groups from child monitors
+    groups = {}
+    child_monitors = {}
+    
     for monitor in monitor_list:
         beats = api.get_monitor_beats(monitor['id'], 24)
         text = monitor['name'] + " | href='" + BASE_URL + "/dashboard/" + str(monitor['id']) + "'"
         
         if(len(beats) > 0 and beats[-1]['status'] == True):
             monitor_online = monitor_online + 1
-            text = "🟢 " + text
+            status_icon = "🟢"
         else:
-            text = "❗️ " + text + " color='#ff0000'"
-        monitor_list_string.append(text)
+            status_icon = "❗️"
+            text += " color='#ff0000'"
+        
+        # Check if this is a group or child monitor
+        if monitor.get('parent') is None:
+            # This is a group (parent monitor)
+            groups[monitor['id']] = {
+                'name': monitor['name'],
+                'status_icon': status_icon,
+                'text': text,
+                'children': []
+            }
+        else:
+            # This is a child monitor
+            parent_id = monitor.get('parent')
+            if parent_id not in child_monitors:
+                child_monitors[parent_id] = []
+            child_monitors[parent_id].append({
+                'name': monitor['name'],
+                'status_icon': status_icon,
+                'text': f"--{status_icon} {text}"
+            })
+    
+    # Build the menu structure
+    for group_id, group_info in groups.items():
+        if group_id in child_monitors:
+            children = child_monitors[group_id]
+            online_count = sum(1 for child in children if child['status_icon'] == '🟢')
+            total_count = len(children)
+            
+            # Group status based on children
+            if online_count == total_count and total_count > 0:
+                group_status = "🟢"
+            elif online_count > 0:
+                group_status = "⚠️"
+            else:
+                group_status = "❗️"
+            
+            # Add group header
+            monitor_list_string.append(f"{group_status} {group_info['name']} ({online_count}/{total_count})")
+            
+            # Add children
+            for child in children:
+                monitor_list_string.append(child['text'])
+        else:
+            # Group with no children, treat as standalone
+            monitor_list_string.append(group_info['text'])
 
     ## PRINT DATA
     if monitor_online == monitor_total:
